@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: "80"
+  name: w3-pod
+  namespace: webapp
+spec:
+  containers:
+  - image: nginx
+    name: w3-pod
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
