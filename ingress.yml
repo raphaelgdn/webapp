@@ -1,0 +1,28 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webapp-ingress
+  namespace: webapp 
+spec:
+  rules:
+    - host: w1.rgdn.com.br
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: w1-service
+                port: 
+                  number: 80
+    - host: w2.rgdn.com.br
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: w2-service
+                port:
+                  number: 80
